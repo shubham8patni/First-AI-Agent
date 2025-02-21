@@ -18,7 +18,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-tavily = TavilyClient(api_key="")
+tavily = TavilyClient(api_key=os.getenv("TAVILY_KEY"))
 
 # ========= 🔹 Load Policy Documents & Preprocess 🔹 =========
 POLICY_DOCUMENT_PATHS = ["Zurich_sompo_Domestic_Travel_Insurance_final.pdf"] #["zurich_domestic_PDP.pdf"] #["sompodom_merged.pdf", "PDF_translate_Travel_zurich.pdf", "Zurich_APAC.pdf"]
@@ -215,10 +215,10 @@ def ask():
 
     except Exception as e:
         return jsonify({"error": f"An error occurred: {str(e)}"}), 500
-    
+
 @app.route("/recommend_mock", methods=["POST"])
 def recommend_mock():
-    category = request.form.get("category", "")  # Default to International    
+    category = request.form.get("category", "")  # Default to International
     destination = request.form.get("destination", "")
     print(category, destination)
     template = ""  # Ensure template is always assigned
@@ -237,7 +237,7 @@ def recommend_mock():
                 ### **Recommended Insurance Plan**
                 - **Provider:** Zurich / Sompo
                 - **Plan Name:** [Plan name]
-                - **Key Benefits:** 
+                - **Key Benefits:**
                 - [Coverage 1]
                 - [Coverage 2]
                 - [Coverage 3]
@@ -276,7 +276,7 @@ def recommend_mock():
 
     if not travel_data or "answer" not in travel_data:
        return jsonify({"error": "Failed to fetch travel data"}), 500
-    
+
     print("evendata", travel_data)
 
     prompt = PromptTemplate(input_variables=["destination", "tavily_summary"], template=template)
