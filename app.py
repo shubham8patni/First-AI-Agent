@@ -218,8 +218,19 @@ def ask():
 
 @app.route("/recommend_mock", methods=["POST"])
 def recommend_mock():
-    category = request.form.get("category", "")  # Default to International
-    destination = request.form.get("destination", "")
+    try:
+        data = request.get_json()  # Read the raw JSON body
+        if data is None:
+            return jsonify({"error": "Invalid JSON or empty request body"}), 400
+
+        # return jsonify({"message": "JSON received successfully", "data": data})
+
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    # category = request.form.get("category", "")  # Default to International
+    # destination = request.form.get("destination", "")
+    destination = data.get("destination", "")
+    category = data.get("category", "")
     print(category, destination)
     template = ""  # Ensure template is always assigned
     travel_data ={}
