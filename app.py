@@ -25,19 +25,19 @@ POLICY_DOCUMENT_PATHS = ["Zurich_sompo_Domestic_Travel_Insurance_final.pdf"] #["
 policy_texts = []
 travel_data_domestic = [
     {
-        "destination": "jakarta",
+        "destination": "Jakarta Barat",
         "startDate": "01/09/2025",
         "endDate": "31/01/2026",
         "event": "It's best to avoid traveling to the Indonesian capital Jakarta during the rainy season from September to January, as the weather tends to be humid, and some areas may face flooding. Due to flooding there can be travel delays and loss of hotel reservations as well."
     },
     {
-        "destination": "bali",
+        "destination": "Bali",
         "startDate": "01/12/2025",
         "endDate": "31/01/2026",
         "event": "Those looking for a quintessential Bali vacation with plenty of sunshine and outdoor activities will want to avoid the rainy season (especially during the wettest months, December and January)."
     },
     {
-        "destination": "bintan",
+        "destination": "Bintan",
         "startDate": "01/11/2025",
         "endDate": "31/12/2025",
         "event": "Rain on a tropical island like Bintan tends to occur sporadically through the year, though you have the highest chance of encountering heavy rains during the months of November and December when the monsoon season begins. There might be travel delays or cancellations or loss of hotel reservations during this month."
@@ -46,25 +46,25 @@ travel_data_domestic = [
 
 travel_data_intenational =  [
         {
-            "destination": "india",
+            "destination": "India",
             "startDate": "01/01/2025",
             "endDate": "30/04/2025",
             "event": "There will be Maha kumbh religious event in india from January to April. There will be too much travellers movement during this time which might result in travel delays and baggage loss or delaya. Hotel reservations might also get cancelled which might result in inconveience. Both train and air travel is costly durign this time."
         },
         {
-            "destination": "japan",
+            "destination": "Japan",
             "startDate": "01/07/2025",
             "endDate": "31/08/2025",
             "event": "This is time of extreme weather in Japan from July to August. Due to extreme weather there might be delays in baggage, flight getting cancelled. Loss of hotel reservations due to weather conditions or delays on travel will be normal."
         },
         {
-            "destination": "philippine",
+            "destination": "Philippines",
             "startDate": "01/07/2025",
             "endDate": "30/09/2025",
             "event": "This is period of typhoons weather in philippines from July to September. Due to extreme weather there might be delays in baggage, flight getting cancelled. Loss of hotel reservations due to weather conditions or delays on travel will be normal."
         },
         {
-            "destination": "russia",
+            "destination": "Russia",
             "startDate": "01/01/2025",
             "endDate": "30/03/2025",
             "event": "This is period of extreme cold weather in russia from January to March. Due to extreme weather there might be delays in baggage, flight getting cancelled. Loss of hotel reservations due to weather conditions or delays on travel will be normal."
@@ -235,6 +235,7 @@ def recommend_mock():
     template = ""  # Ensure template is always assigned
     travel_data ={}
     if category == "International":
+        print("Log1",category,destination)
         template =  """You are an AI travel insurance assistant. Your goal is to recommend the best travel insurance product **(Zurich or Sompo)** based on the latest travel insights.
 
                 Latest Travel Insights:
@@ -268,25 +269,48 @@ def recommend_mock():
             start_date = travel["startDate"]
             end_date = travel["endDate"]
             event = travel["event"]
-            if travel_destination == request.form.get("destination", ""):
+            if travel_destination == destination:
                 travel_data["answer"] = event
     elif category == "Domestic":
-        template = """You are an AI travel insurance assistant. Based on the latest travel insights:
-        - {tavily_summary}
-        Provide a personalized insurance recommendation focusing on Domestic travel products for someone visiting {destination}.
-        Highlight important add-ons based on current risks."""
-        for i in travel_data_domestic:
+        print("Log2",category,destination)
+        template = """You are an AI travel insurance assistant. Your goal is to recommend the best travel insurance product **(Zurich or Sompo)** based on the latest travel insights.
+
+                Latest Travel Insights:
+                - {tavily_summary}
+
+                Provide a recommendation for **someone visiting {destination}**, ensuring:
+                1. **Select the best insurance provider** (Zurich or Sompo) based on coverage.
+                2. **List the plan name** and key benefits.
+                3. **Explain why this plan is best** based on risks and travel conditions.
+
+                ### **Recommended Insurance Plan**
+                - **Provider:** Zurich / Sompo
+                - **Plan Name:** [Plan name]
+                - **Key Benefits:**
+                - [Coverage 1]
+                - [Coverage 2]
+                - [Coverage 3]
+                - **Why This Plan?** [Explain reasoning]
+
+                ### **Additional Add-On Recommendations**
+                - **[Add-on 1]**: [Why needed]
+                - **[Add-on 2]**: [Why needed]
+
+                Ensure the response is **well-organized, professional, and easy to understand.**"""
+        for travel in travel_data_domestic:
             travel_destination = travel["destination"]
             start_date = travel["startDate"]
             end_date = travel["endDate"]
             event = travel["event"]
-            if travel_destination["destination"] == request.form.get("destination", ""):
+            if travel_destination == destination:
                 travel_data["answer"] = event
     if not template:
+        print("Log3",category,destination)
         return jsonify({"error": "Invalid category provided"}), 400
-
+    print("Log4",category,destination,travel_data)
     if not travel_data or "answer" not in travel_data:
-       return jsonify({"error": "Failed to fetch travel data"}), 500
+        print("Log5",category,destination)
+        return jsonify({"error": "Failed to fetch travel data"}), 500
 
     print("evendata", travel_data)
 
