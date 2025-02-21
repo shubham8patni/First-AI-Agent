@@ -1,0 +1,56 @@
+{% extends "base.html" %}
+{% block title %} Home Page {% endblock %}
+{% block content %}    
+  {% with message = get_flashed_messages() %}
+    {% if message %}
+        {% for i in message %}
+          <p>{{i}}</p>
+        {% endfor %}
+    {% endif %}
+  {% endwith %}
+  
+  <div class="container pt-5">  
+    <h2>Welcome to my First REST-API project !!</h2><br>
+    <h4>This API helps you to : <br>
+      <ul>
+        <li>Get sum of list of numbers : {sum} </li>
+        <li>Get average of list of numbers : {avg}</li>
+        <li>Find if given value is a palindrome : {palin}</li>
+      </ul>
+      <br>
+
+      URL to call the api : <br>
+      https://first-rest-api-sp.herokuapp.com/{function-name}/ls=[{list or values}]<br>
+      Replace : 
+      <ul>
+        <li>{function name} by sum or avg or palin based on requirement</li>
+        <li>{list or values} by list of number for avg and sum function and a single value for palin function</li>
+      </ul>
+      <br>
+      Examples : 
+      <ul>
+        <li>https://first-rest-api-sp.herokuapp.com/sum/ls=[1,2,3]</li>
+        <li>https://first-rest-api-sp.herokuapp.com/avg/ls=[1,2,3,55,66,82,67]</li>
+        <li>https://first-rest-api-sp.herokuapp.com/palin/ls=[1234554321]</li>
+      </ul>
+
+      <br>
+      <br>
+      OUTPUT/Response: The response of the queries will be in form of JSON.
+    </h4>
+    <!-- {% for i in name %} <!-- This is the format to write python directly in html file in flask. -->
+        <!-- {% if i == "mtech" %}
+            <p>course : {{i}}</p>
+        {% else %}
+            <p>{{i}}</p>
+        {% endif %}
+    {% endfor %} -->
+
+  </div>
+      <!-- {% if email %}
+        <h2>Your Email is: {{email}}</h2>
+      {% else %}
+        <p></p>
+      {% endif %} -->
+      
+{% endblock %}
