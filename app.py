@@ -18,7 +18,7 @@ from flask_cors import CORS
 
 app = Flask(__name__)
 CORS(app)
-tavily = TavilyClient(api_key="")
+tavily = TavilyClient(api_key="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")
 
 # ========= 🔹 Load Policy Documents & Preprocess 🔹 =========
 POLICY_DOCUMENT_PATHS = ["Zurich_sompo_Domestic_Travel_Insurance_final.pdf"] #["zurich_domestic_PDP.pdf"] #["sompodom_merged.pdf", "PDF_translate_Travel_zurich.pdf", "Zurich_APAC.pdf"]
@@ -218,8 +218,19 @@ def ask():
     
 @app.route("/recommend_mock", methods=["POST"])
 def recommend_mock():
-    category = request.form.get("category", "")  # Default to International    
-    destination = request.form.get("destination", "")
+    try:
+        data = request.get_json()  # Read the raw JSON body
+        if data is None:
+            return jsonify({"error": "Invalid JSON or empty request body"}), 400
+
+        # return jsonify({"message": "JSON received successfully", "data": data})
+    
+    except Exception as e:
+        return jsonify({"error": str(e)}), 500
+    # category = request.form.get("category", "")  # Default to International    
+    # destination = request.form.get("destination", "")
+    destination = data.get("destination", "")
+    category = data.get("category", "")
     print(category, destination)
     template = ""  # Ensure template is always assigned
     travel_data ={}
