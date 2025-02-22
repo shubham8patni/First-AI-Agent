@@ -322,4 +322,4 @@ def recommend_mock():
 
 # ========= 🔹 Run Flask App 🔹 =========
 if __name__ == "__main__":
-    app.run(debug=True,port=3000)
+    app.run(debug=True,port=os.getenv("PORT"))
