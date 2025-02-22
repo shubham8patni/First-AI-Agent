@@ -14,8 +14,9 @@ from langchain.agents import initialize_agent, AgentType
 from langchain.retrievers.multi_query import MultiQueryRetriever
 from tavily import TavilyClient
 from flask_cors import CORS
+from dotenv import load_dotenv
 
-
+load_dotenv()
 app = Flask(__name__)
 CORS(app)
 tavily = TavilyClient(api_key=os.getenv("TAVILY_KEY"))
@@ -322,5 +323,5 @@ def recommend_mock():
 
 # ========= 🔹 Run Flask App 🔹 =========
 if __name__ == "__main__":
-    port = int(os.getenv("PORT", 5000))
+    port = int(os.environ.get("PORT", 5000))
     app.run(host='0.0.0.0', port=port)
