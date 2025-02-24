@@ -21,7 +21,7 @@ CORS(app)
 tavily = TavilyClient(api_key=os.getenv("TAVILY_KEY"))
 
 # ========= 🔹 Load Policy Documents & Preprocess 🔹 =========
-POLICY_DOCUMENT_PATHS = ["Zurich_sompo_Domestic_Travel_Insurance_final.pdf", "sompodom_merged.pdf"] #["zurich_domestic_PDP.pdf"] #["sompodom_merged.pdf", "PDF_translate_Travel_zurich.pdf", "Zurich_APAC.pdf"]
+POLICY_DOCUMENT_PATHS = ["Zurich_sompo_Domestic_Travel_Insurance_final.pdf", "Zurich_Policy_Wording.pdf", "Policy_Wording_SOMPO_Domestic.pdf", "Zurich_sompo_International_ASEAN.pdf", "sompodom_merged.pdf"] #["zurich_domestic_PDP.pdf"] #["sompodom_merged.pdf", "PDF_translate_Travel_zurich.pdf", "Zurich_APAC.pdf"]
 policy_texts = []
 travel_data_domestic = [
     {
@@ -159,7 +159,7 @@ insurance_tool_forced_FAISS_retrival = Tool(
 
 # ========= 🔹 LLM Configuration (Meta Llama 3) 🔹 =========
 llm = HuggingFaceEndpoint(
-    repo_id="deepseek-ai/DeepSeek-R1",#"meta-llama/Meta-Llama-3-70B",
+    repo_id="deepseek-ai/DeepSeek-R1",#"deepseek-ai/DeepSeek-R1",#"meta-llama/Meta-Llama-3-70B",
     temperature=0.4,
     top_p=0.7,
     task="text-generation",
@@ -207,41 +207,65 @@ insurance_tool = Tool(
 # ========= 🔹 Strict Prompt with Hallucination Prevention 🔹 =========
 strict_prompt = PromptTemplate(
     input_variables=["context", "question"],
-    template="""
-        You are an AI insurance assistant. Your task is to answer user queries **only using the retrieved policy information**.
+    template = """
+You are an AI insurance assistant. Given the following retrieved policy information:
 
-        **Guidelines:**
-        1. **Use only the provided policy context** from the retrieved documents.
-        2. **If the retrieved context does not contain the answer, respond with:**  
-        "I do not have enough information to answer this question."
-        3. **Never make assumptions, add extra information, or guess**.
-        4. **If multiple plans apply, compare them clearly.**
+{context}
 
-        ---
+Answer the user's question fully. If multiple plans or coverages apply, include all relevant details.
+If the answer cannot be found in the provided context, respond with "I do not have enough information to answer this question."
 
-        ### **Example Query & Response**
-        #### **User Question:**  
-        *"Which plan covers accidental death? What is the coverage amount?"*
+Example:
+User: "Which plan covers accidental death? What is the coverage amount?"
+Retrieved Info:
+- Product Name : Plan A: Covers accidental death, $200,000 coverage.
+- Product Name : Plan B: Covers accidental death, $150,000 coverage.
 
-        #### **Retrieved Policy Information:**  
-        - **Plan A**: Covers accidental death, **$200,000** coverage.  
-        - **Plan B**: Covers accidental death, **$150,000** coverage.  
+Response: "Product name - Plan A and Product name - Plan B both cover accidental death. Plan A provides $200,000, while Plan B provides $150,000."
 
-        #### **Correct Response:**  
-        *"Both Plan A and Plan B provide accidental death coverage. Plan A covers **$200,000**, while Plan B covers **$150,000**."*
+Now answer the following question:
+User: {question}
+Retrieved Info:
+{context}
 
-        ---
+Response:
+"""
+)
+    # template="""
+    #     You are an AI insurance assistant. Your task is to answer user queries **only using the retrieved policy information**.
 
-        ### **Now Answer the User's Question**
-        #### **User Question:**  
-        {question}
+    #     **Guidelines:**
+    #     1. **Use only the provided policy context** from the retrieved documents.
+    #     2. **If the retrieved context does not contain the answer, respond with:**  
+    #     "I do not have enough information to answer this question."
+    #     3. **Never make assumptions, add extra information, or guess**.
+    #     4. **If multiple plans apply, compare them clearly.**
 
-        #### **Retrieved Policy Information:**  
-        {context}
+    #     ---
 
-        #### **Final Response:**
-        """
-        )
+    #     ### **Example Query & Response**
+    #     #### **User Question:**  
+    #     *"Which plan covers accidental death? What is the coverage amount?"*
+
+    #     #### **Retrieved Policy Information:**  
+    #     - **Plan A**: Covers accidental death, **$200,000** coverage.  
+    #     - **Plan B**: Covers accidental death, **$150,000** coverage.  
+
+    #     #### **Correct Response:**  
+    #     *"Both Plan A and Plan B provide accidental death coverage. Plan A covers **$200,000**, while Plan B covers **$150,000**."*
+
+    #     ---
+
+    #     ### **Now Answer the User's Question**
+    #     #### **User Question:**  
+    #     {question}
+
+    #     #### **Retrieved Policy Information:**  
+    #     {context}
+
+    #     #### **Final Response:**
+    #     """
+    #     )
 
 
 # ========= 🔹 ReAct Agent for Step-by-Step Reasoning mem =========
@@ -249,8 +273,8 @@ agent = initialize_agent(
     tools= [insurance_tool], #[insurance_tool_forced_FAISS_retrival],#[insurance_tool],  # ✅ Uses the properly wrapped tool
     llm=llm,
     agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION,
-    max_iterations=25,
-    max_execution_time=60,
+    max_iterations=20,
+    max_execution_time=45,
     handle_parsing_errors=True,
     combine_docs_chain=LLMChain(llm=llm, prompt=strict_prompt),
     verbose=True
@@ -379,7 +403,7 @@ def recommend_addon_mock():
     template = "" 
     travel_data ={}
     if category == "International":
-        template = """You are an AI travel insurance assistant. Your goal is to recommend the best travel insurance Add-on/additional benefits for **({product_name})** based on the latest travel insights.
+        template ="""You are an AI travel insurance assistant. Your goal is to recommend the best travel insurance Add-on/additional benefits for **({product_name})** based on the latest travel insights.
 
         ### **Latest Travel Insights:**
         - {tavily_summary}
@@ -400,12 +424,14 @@ def recommend_addon_mock():
 
         Ensure the response is in plain text format **well-organized, professional, and easy to understand, written strictly in English.**
         """
+        print("reached here 1")
         for travel in travel_data_intenational:
             travel_destination = travel["destination"]
             start_date = travel["startDate"]
             end_date = travel["endDate"]
             event = travel["event"]
             if travel_destination == destination:
+                print("log: travel destination and event", destination, event)
                 travel_data["answer"] = event
     elif category == "Domestic":
         template =  """You are an AI travel insurance assistant. Your goal is to recommend the best travel insurance Add-on/additional benefits for **({product_name})** based on the latest travel insights.
