@@ -101,6 +101,7 @@ def load_json_documents(json_path):
 
 # Define your source file paths
 PDF_PATHS = [
+    # "sompo_dom_formatted_hackathon.pdf"
     # "Zurich_sompo_Domestic_Travel_Insurance_final.pdf",
     # "Zurich_Policy_Wording.pdf",
     # "Policy_Wording_SOMPO_Domestic.pdf",
@@ -399,12 +400,17 @@ def recommend_mock():
             return jsonify({"error": "Invalid JSON or empty request body"}), 400
     except Exception as e:
         return jsonify({"error": str(e)}), 500
-
+    category = data.get("category", "")
     destination = data.get("destination", "")
-    for travel in travel_data_domestic:
+    mocked_data = []
+    if category == "Domestic":
+        mocked_data = travel_data_domestic
+    elif category == "International":
+        mocked_data = travel_data_intenational
+    
+    for travel in mocked_data:
             if travel["destination"] == destination:
                 event_details = travel["event"]
-    # product_name = data.get("product", "")
 
     if not destination or not event_details:
         return jsonify({"error": "Missing required parameters"}), 400
