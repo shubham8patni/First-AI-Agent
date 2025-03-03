@@ -1,0 +1,805 @@
+{
+    "product_name": "Zurich Domestic Travel Insurance",
+    "description": "Zurich Travel Insurance offers comprehensive protection for unforeseen events such as trip cancellations, medical and emergency expenses, baggage issues, travel delays, and personal accidents. The insurance is available in two plans: Zurich Domestic Silver Plan and Zurich Domestic Gold Plan.",
+    "plans": [
+        {
+            "plan_name": "Zurich Domestic Silver Plan",
+            "benefits": [
+                {
+                    "section": "Trip Cancellation & Alteration",
+                    "benefit_name": "Zurich Silver Domestic Trip Cancellation & Alteration",
+                    "coverage": "Rp 2,500,000",
+                    "details": "Trip Cancellation and Alteration cover under this section is only available before You leave Home to commence a trip. If the Policy is purchased after You have left Your Home to commence Travel, there is no cover provided for Trip Cancellation.",
+                    "metadata": {
+                        "tags": [
+                            "trip cancellation",
+                            "alteration",
+                            "pre-departure"
+                        ]
+                    }
+                },
+                {
+                    "section": "Emergency Medical Evacuation and Repatriation",
+                    "benefit_name": "Zurich Silver Domestic Emergency Medical Evacuation and Repatriation",
+                    "coverage": "Rp 75,000,000",
+                    "metadata": {
+                        "tags": [
+                            "medical evacuation",
+                            "repatriation"
+                        ]
+                    }
+                },
+                {
+                    "section": "Medical Expenses",
+                    "benefit_name": "Zurich Silver Domestic Medical Expenses",
+                    "sub_benefits": [
+                        {
+                            "type": "Due to Accident",
+                            "coverage": "Rp 75,000,000"
+                        },
+                        {
+                            "type": "Due to Illness",
+                            "coverage": "Rp 5,000,000"
+                        }
+                    ],
+                    "metadata": {
+                        "tags": [
+                            "medical expenses",
+                            "accident",
+                            "illness"
+                        ]
+                    }
+                },
+                {
+                    "section": "Travel Delay",
+                    "benefit_name": "Zurich Silver Domestic Travel Delay Benefit",
+                    "coverage": "Rp 250,000",
+                    "notes": "4hr delay, max Rp 500,000",
+                    "metadata": {
+                        "tags": [
+                            "travel delay"
+                        ]
+                    }
+                },
+                {
+                    "section": "Baggage Delay",
+                    "benefit_name": "Zurich Silver Domestic Baggage Delay",
+                    "coverage": "Rp 250,000",
+                    "notes": "4hr delay, max Rp 500,000",
+                    "metadata": {
+                        "tags": [
+                            "baggage delay"
+                        ]
+                    }
+                },
+                {
+                    "section": "Baggage & Personal Belongings",
+                    "benefit_name": "Zurich Silver Domestic Baggage and Personal Belongings",
+                    "coverage": "Rp 2,500,000",
+                    "notes": "max Rp 250,000/item",
+                    "metadata": {
+                        "tags": [
+                            "baggage",
+                            "personal belongings"
+                        ]
+                    }
+                },
+                {
+                    "section": "Accidental Death & Disablement",
+                    "benefit_name": "Zurich Silver Domestic Accidental Death and Permanent Disablement",
+                    "coverage": "Rp 100,000,000",
+                    "metadata": {
+                        "tags": [
+                            "accidental death",
+                            "disablement"
+                        ]
+                    }
+                },
+                {
+                    "section": "Repatriation",
+                    "benefit_name": "Zurich Silver Domestic Repatriation of Mortal Remains and Other Related Benefits",
+                    "coverage": "Rp 75,000,000",
+                    "metadata": {
+                        "tags": [
+                            "repatriation"
+                        ]
+                    }
+                },
+                {
+                    "section": "Personal Liability",
+                    "benefit_name": "Zurich Silver Domestic Personal Liability",
+                    "coverage": "Rp 25,000,000",
+                    "metadata": {
+                        "tags": [
+                            "personal liability"
+                        ]
+                    }
+                },
+                {
+                    "section": "Additional Benefits",
+                    "benefit_name": "Zurich Silver Domestic Terrorism Cover",
+                    "coverage": "Yes",
+                    "metadata": {
+                        "tags": [
+                            "terrorism"
+                        ]
+                    }
+                },
+                {
+                    "section": "Additional Benefits",
+                    "benefit_name": "Zurich Silver Domestic Recreational Sports and Activities",
+                    "coverage": "Yes",
+                    "metadata": {
+                        "tags": [
+                            "recreational activities"
+                        ]
+                    }
+                },
+                {
+                    "section": "Covid-19 Protection (Add-On)",
+                    "benefit_name": "Zurich Silver Domestic Covid-19 Protection",
+                    "sub_benefits": [
+                        {
+                            "benefit": "Trip Cancellation & Alteration",
+                            "coverage": "Rp 1,250,000"
+                        },
+                        {
+                            "benefit": "Medical Expenses (including emergency medical evacuation)",
+                            "coverage": "Rp 5,000,000"
+                        },
+                        {
+                            "benefit": "Quarantine (Rp 500,000/day) and Extra Transportation Costs",
+                            "coverage": "Rp 5,000,000"
+                        }
+                    ],
+                    "not_covered": [
+                        "Trip Curtailment or Return of Children",
+                        "Automatic Extension of Cover"
+                    ],
+                    "metadata": {
+                        "tags": [
+                            "covid-19",
+                            "add-on"
+                        ]
+                    }
+                }
+            ]
+        },
+        {
+            "plan_name": "Zurich Domestic Gold Plan",
+            "benefits": [
+                {
+                    "section": "Trip Cancellation & Alteration",
+                    "benefit_name": "Zurich Gold Domestic Trip Cancellation & Alteration",
+                    "coverage": "Rp 5,000,000",
+                    "metadata": {
+                        "tags": [
+                            "trip cancellation",
+                            "alteration"
+                        ]
+                    }
+                },
+                {
+                    "section": "Emergency Medical Evacuation and Repatriation",
+                    "benefit_name": "Zurich Gold Domestic Emergency Medical Evacuation and Repatriation",
+                    "coverage": "Rp 150,000,000",
+                    "metadata": {
+                        "tags": [
+                            "medical evacuation",
+                            "repatriation"
+                        ]
+                    }
+                },
+                {
+                    "section": "Medical Expenses",
+                    "benefit_name": "Zurich Gold Domestic Medical Expenses",
+                    "sub_benefits": [
+                        {
+                            "type": "Due to Accident",
+                            "coverage": "Rp 150,000,000"
+                        },
+                        {
+                            "type": "Due to Illness",
+                            "coverage": "Rp 10,000,000"
+                        }
+                    ],
+                    "metadata": {
+                        "tags": [
+                            "medical expenses",
+                            "accident",
+                            "illness"
+                        ]
+                    }
+                },
+                {
+                    "section": "Travel Delay",
+                    "benefit_name": "Zurich Gold Domestic Travel Delay Benefit",
+                    "coverage": "Rp 250,000",
+                    "notes": "4hr delay, max Rp 500,000",
+                    "metadata": {
+                        "tags": [
+                            "travel delay"
+                        ]
+                    }
+                },
+                {
+                    "section": "Baggage Delay",
+                    "benefit_name": "Zurich Gold Domestic Baggage Delay",
+                    "coverage": "Rp 250,000",
+                    "notes": "4hr delay, max Rp 500,000",
+                    "metadata": {
+                        "tags": [
+                            "baggage delay"
+                        ]
+                    }
+                },
+                {
+                    "section": "Baggage & Personal Belongings",
+                    "benefit_name": "Zurich Gold Domestic Baggage and Personal Belongings",
+                    "coverage": "Rp 5,000,000",
+                    "notes": "max Rp 250,000/item",
+                    "metadata": {
+                        "tags": [
+                            "baggage",
+                            "personal belongings"
+                        ]
+                    }
+                },
+                {
+                    "section": "Accidental Death & Disablement",
+                    "benefit_name": "Zurich Gold Domestic Accidental Death and Permanent Disablement",
+                    "coverage": "Rp 200,000,000",
+                    "metadata": {
+                        "tags": [
+                            "accidental death",
+                            "disablement"
+                        ]
+                    }
+                },
+                {
+                    "section": "Repatriation",
+                    "benefit_name": "Zurich Gold Domestic Repatriation of Mortal Remains and Other Related Benefits",
+                    "coverage": "Rp 150,000,000",
+                    "metadata": {
+                        "tags": [
+                            "repatriation"
+                        ]
+                    }
+                },
+                {
+                    "section": "Personal Liability",
+                    "benefit_name": "Zurich Gold Domestic Personal Liability",
+                    "coverage": "Rp 50,000,000",
+                    "metadata": {
+                        "tags": [
+                            "personal liability"
+                        ]
+                    }
+                },
+                {
+                    "section": "Additional Benefits",
+                    "benefit_name": "Zurich Gold Domestic Terrorism Cover",
+                    "coverage": "Yes",
+                    "metadata": {
+                        "tags": [
+                            "terrorism"
+                        ]
+                    }
+                },
+                {
+                    "section": "Additional Benefits",
+                    "benefit_name": "Zurich Gold Domestic Recreational Sports and Activities",
+                    "coverage": "Yes",
+                    "metadata": {
+                        "tags": [
+                            "recreational activities"
+                        ]
+                    }
+                },
+                {
+                    "section": "Covid-19 Protection (Add-On)",
+                    "benefit_name": "Zurich Gold Domestic Covid-19 Protection",
+                    "sub_benefits": [
+                        {
+                            "benefit": "Trip Cancellation & Alteration",
+                            "coverage": "Rp 2,500,000"
+                        },
+                        {
+                            "benefit": "Medical Expenses (including emergency medical evacuation)",
+                            "coverage": "Rp 10,000,000"
+                        },
+                        {
+                            "benefit": "Quarantine (Rp 500,000/day) and Extra Transportation Costs",
+                            "coverage": "Rp 5,000,000"
+                        }
+                    ],
+                    "not_covered": [
+                        "Trip Curtailment or Return of Children",
+                        "Automatic Extension of Cover"
+                    ],
+                    "metadata": {
+                        "tags": [
+                            "covid-19",
+                            "add-on"
+                        ]
+                    }
+                },
+                {
+                    "section": "Add-On",
+                    "benefit_name": "Add-On: Covid-19 Protection",
+                    "price": "Rp 9,000",
+                    "coverage_description": "Coverage for medical expenses if you test positive for COVID-19, including quarantine costs, transportation fees, and trip cancellation.",
+                    "metadata": {
+                        "tags": [
+                            "covid-19",
+                            "add-on"
+                        ]
+                    }
+                }
+            ]
+        }
+    ],
+    "exclusions": [
+        "Trips Starting Abroad: Any trip that starts abroad is not covered by Zurich Travel Insurance.",
+        "Travel for Medical Treatment: Insurance does not cover trips for medical care, consultation, or treatment.",
+        "Pre-existing Conditions: Any pre-existing medical, congenital, or hereditary condition is excluded.",
+        "Outside the Insurance Period: Any claims outside the covered travel period.",
+        "Unlawful Acts: Claims arising from illegal activities or confiscation by customs or other authorities.",
+        "War or Civil Unrest: Claims resulting from war, invasion, civil war, rebellion, or military force are excluded."
+    ],
+    "key_information": {
+        "eligibility": "To be covered, you must be between 0 and 69 years old.",
+        "family_coverage": "Covers you, your spouse, and children traveling together to the same destination and during the same period.",
+        "minimum_distance": "The destination must be at least 100 km from your home.",
+        "dual_coverage": "Dual coverage is available for 2 or more people traveling together on the same schedule (maximum of 10 people). They do not need to be related."
+    },
+    "cancellation_policy": "You may cancel your policy within 14 calendar days of purchase, provided that no claims have been made, no rights under the policy have been exercised, and your trip has not yet started.",
+    "claim_process": {
+        "cashless_claims": {
+            "notification": "Notify Zurich Contact Center and in writing at zurichcare.general@zurich.co.id within 30 calendar days of the incident.",
+            "document_submission": "Submit the necessary claim documents within 90 calendar days after the incident.",
+            "processing": "Zurich will process your claim and issue payment within 30 calendar days after the claim agreement letter is issued."
+        }
+    },
+    "Benefit details": {
+        "trip_cancellation_alteration": {
+            "description": "Trip Cancellation and Alteration cover is only available before departure. No cover is provided if the policy is purchased after departure.",
+            "covered": {
+                "loss_reimbursement": "Indemnification for deposits, advance payments, travel charges, or tour expenses that are unused due to trip cancellation.",
+                "reasons": [
+                    "Death or serious medical condition of policyholder, family member, travel companion, business partner, or host at destination.",
+                    "Unforeseen witness summons from a judicial court.",
+                    "Unforeseen strike, riot, civil commotion, or civil disturbance causing public transport cancellation.",
+                    "Extreme weather or natural disaster at departure point or destination.",
+                    "Policyholder required by police or authority due to burglary, fire, or natural disaster at home or business."
+                ],
+                "conditions": {
+                    "time_restrictions": {
+                        "medical_or_legal": "Events must occur within 30 days before departure.",
+                        "transport_or_weather": "Events must occur within 7 days before departure."
+                    },
+                    "payment_limitations": {
+                        "max_payout": "As specified in the insurance policy.",
+                        "frequent_flyer": "Reimbursement based on lowest available published flight fare."
+                    }
+                }
+            },
+            "not_covered": [
+                "Expected or known reasons for cancellation at time of purchase.",
+                "Public transport cancellations, delays, or rescheduling.",
+                "Disinclination to travel or change of plans.",
+                "Financial circumstances.",
+                "Unlawful acts affecting the trip.",
+                "Delayed notice of cancellation.",
+                "Failure to obtain required travel documents.",
+                "Public transport refusal to allow travel.",
+                "Bankruptcy, liquidation, or error of service providers.",
+                "Changes in travel schedules not verified.",
+                "Government prohibitions or regulations.",
+                "Uncovered expenses under other policies or sources."
+            ]
+        },
+        "medical_emergency_expenses": {
+            "description": "Accident and emergency coverage. Private treatment is covered only if public service is unavailable.",
+            "covered": {
+                "medical_expenses": [
+                    "Emergency medical, x-ray, surgical, and hospital treatment.",
+                    "Emergency dental treatment for injury to sound, natural teeth.",
+                    "Traditional treatment by recognized practitioners (e.g., herbalist, acupuncturist)."
+                ],
+                "evacuation_repatriation": {
+                    "criteria": "Injury or illness requiring treatment unavailable locally.",
+                    "transport_means": [
+                        "Air ambulance",
+                        "Surface ambulance",
+                        "Regular air transport",
+                        "Railroad"
+                    ],
+                    "final_decision": "Zurich Assist based on medical necessity."
+                },
+                "compassionate_visit": {
+                    "criteria": "Hospitalization abroad for at least 5 consecutive days.",
+                    "covered_expenses": [
+                        "Economy return airfare for family or friend if traveling alone.",
+                        "One-way airfare for family or companion accompanying return.",
+                        "Reasonable hotel accommodation expenses."
+                    ]
+                },
+                "children_return": "Covers return airfare for unattended children if policyholder is hospitalized or deceased."
+            },
+            "not_covered": [
+                "Non-urgent surgery or treatment.",
+                "Pre-existing conditions requiring known treatment at the time of policy purchase.",
+                "Activities against medical advice.",
+                "Cosmetic surgery, glasses, contact lenses, hearing aids, dental appliances.",
+                "Private nursing (unless for emergency evacuation).",
+                "Elective, non-emergency treatments.",
+                "Private room accommodations unless medically necessary.",
+                "Self-endangerment claims.",
+                "Refusal of medically approved repatriation.",
+                "Expenses exceeding necessary and reasonable costs."
+            ]
+        },
+        "TravelAndAssociatedExpenses": {
+            "TripCurtailment": {
+                "WhatIsCovered": {
+                    "EarlyReturnHome": [
+                        "Unused Public Transport costs, accommodation costs, and tour costs paid in advance and non-recoverable.",
+                        "Reasons for curtailment:",
+                        "Serious Medical Condition.",
+                        "Death or Serious Medical Condition of Family Member, Travel Companion, or Business Partner.",
+                        "Unforeseen Strike, riot, civil commotion, or Civil Disturbance at destination.",
+                        "Extreme weather conditions or Natural Disaster at destination.",
+                        "Police or authority requirement due to burglary or damage at Home or place of business."
+                    ],
+                    "TripAlterationDueToHospitalization": "Additional transportation and accommodation costs if hospitalized Overseas for at least 5 days."
+                },
+                "WhatIsNotCovered": [
+                    "Expected or known reasons before purchasing insurance.",
+                    "Failure to obtain necessary travel documents.",
+                    "Personal disinclination or financial circumstances.",
+                    "Unlawful acts affecting the trip.",
+                    "Bankruptcy or default of transport providers.",
+                    "Government prohibitions.",
+                    "Return costs to the original destination.",
+                    "Losses covered by other insurance or providers.",
+                    "Timeshare management fees."
+                ]
+            },
+            "TravelDelay": {
+                "WhatIsCovered": {
+                    "TravelDelayAllowance": "Allowance per delay period as stated in Insurance Policy.",
+                    "ExtraHotelAccommodationExpenses": "Reimbursement for hotel accommodation for delays over 6 hours.",
+                    "ExtraTransportationCosts": "Reimbursement for one-way economy travel ticket if delay exceeds 6 hours."
+                },
+                "WhatIsNotCovered": [
+                    "Delays due to known strikes, civil disturbances, or adverse weather at the time of purchase.",
+                    "Negligence of traveler or companion.",
+                    "Delays involving taxis, shuttles, cruises, or tour buses.",
+                    "Failure to obtain confirmation of delay from Public Transport.",
+                    "Failure to take the first available alternative transport.",
+                    "Delays due to overbooking."
+                ]
+            },
+            "MissedFlightConnection": {
+                "WhatIsCovered": {
+                    "Reimbursement for economy ticket if connection is missed due to:": [
+                        "Strike, Civil Disturbance, or industrial action.",
+                        "Extreme weather conditions or Natural Disaster.",
+                        "Mechanical or electrical breakdown of the aircraft with no alternative within 6 hours."
+                    ]
+                },
+                "WhatIsNotCovered": [
+                    "Failure to check in on time.",
+                    "Overbooking.",
+                    "Costs covered under Travel Delay."
+                ]
+            }
+        },
+        "BaggageAndPersonalBelongingsCover": {
+            "BaggageDelay": {
+                "WhatIsCovered": "Reimbursement for essentials if baggage is delayed, misdirected, or misplaced by Public Transport.",
+                "Conditions": "Delay upon return to Indonesia is not covered. International and Domestic plans apply separately."
+            },
+            "BaggageAndPersonalBelongings": {
+                "WhatIsCovered": "Reimbursement for lost, stolen, destroyed, or damaged possessions after depreciation.",
+                "PersonalBelongingsInUnattendedVehicle": [
+                    "Property must be in a locked boot, glove compartment, or luggage compartment.",
+                    "Visible evidence of forced entry required."
+                ],
+                "Conditions": [
+                    "Per item limits as stated in Insurance Policy.",
+                    "Claims for pairs or sets cover only the lost/damaged part.",
+                    "Proof of ownership and purchase year required.",
+                    "Police report within 24 hours required for claims.",
+                    "Damaged items must be retained for inspection."
+                ],
+                "WhatIsNotCovered": [
+                    "Negligence-related loss.",
+                    "Money, credit cards, travel tickets, and securities.",
+                    "Contact lenses, glasses, prostheses.",
+                    "Business-related equipment or goods.",
+                    "Consumables and food.",
+                    "Vehicles and accessories.",
+                    "Fragile items (glass, crystal).",
+                    "Unattended valuables in public transport or accommodation.",
+                    "Damage from software issues or hacking.",
+                    "Baggage loss due to unattended placement.",
+                    "Failure to report baggage loss to Public Transport immediately."
+                ]
+            },
+            "PersonalMoneyAndTravelDocuments": {
+                "WhatIsCovered": {
+                    "PersonalMoney": "Reimbursement for stolen money during the trip, if carried personally or stored securely.",
+                    "LossOfTravelDocumentsAndPaymentCards": [
+                        "Additional transportation and accommodation costs due to stolen travel documents.",
+                        "Fees for obtaining temporary travel documents.",
+                        "Rescheduling costs for return transport due to lost documents within 48 hours of departure.",
+                        "Emergency call charges for blocking lost/stolen payment cards."
+                    ]
+                },
+                "WhatIsNotCovered": [
+                    "Refundable traveler's cheques.",
+                    "Losses not reported to police or embassy within 24 hours.",
+                    "Exchange rate fluctuations or depreciation of money.",
+                    "Fines or penalties due to delayed document replacement.",
+                    "Fraudulent use of payment cards."
+                ]
+            }
+        }
+    },
+    "general_exclusions": [
+        "Any Trip which starts Abroad unless an Already Traveling Policy is purchased.",
+        "Any claims for costs or expenses incurred outside the Period of Insurance.",
+        "Trips undertaken for medical care, consultation, treatment, diagnosis, or rest and recuperation following prior Injury or Illness.",
+        "Travel while unfit or against medical advice.",
+        "Travel with a Terminal Condition or awaiting test results or referral for a Pre-Existing Medical Condition.",
+        "Routine medical, optical, or dental consultations, treatments, examinations, or check-ups.",
+        "Pre-Existing Medical Conditions, congenital and hereditary conditions.",
+        "Conditions resulting from pregnancy, childbirth, miscarriage, abortion, pre-natal or post-natal care.",
+        "Sexually transmitted diseases and conditions related to Herniated Nucleus Pulposus (HNP).",
+        "Suicide, attempted suicide, intentional self-inflicted Injury, substance abuse, or use of non-prescribed drugs or alcohol.",
+        "Mental illness, psychiatric disorders, stress, anxiety, or depression.",
+        "HIV/AIDS and related illnesses, including any mutant derivative variations.",
+        "Routine or elective (non-emergency) treatments, surgeries, specialist reviews, referrals, or exploratory tests unrelated to the primary Illness or Injury.",
+        "Air travel other than as a fare-paying passenger on a scheduled airline or licensed charter aircraft.",
+        "Claims arising from travel on a Cruise ship without Cruise Cover.",
+        "Participation in adventure activities without Adventure Activities Cover.",
+        "Participation in winter sports without Winter Sports Cover.",
+        "Losses arising from COVID-19 without COVID-19 Protection Cover.",
+        "Participation in dangerous sports activities.",
+        "Engagement in physically demanding or acrobatic sports, unless for officially organized and approved Children's sports.",
+        "Professional sports or sports with financial remuneration, donation, sponsorship, or rewards.",
+        "Speed contests or racing, other than on foot.",
+        "Engagement in armed/unarmed combat, martial arts, boxing, or wrestling.",
+        "Trekking or hiking beyond 3,000 meters above sea level.",
+        "Mountaineering requiring specialized equipment.",
+        "Hunting trips or safaris not provided by a licensed commercial operator.",
+        "Engagement in Manual Work.",
+        "Illegal or unlawful acts, confiscation, detention, destruction, or quarantine of possessions by authorities.",
+        "Losses caused by willful or malicious acts.",
+        "Failure to safeguard health through necessary vaccinations and inoculations.",
+        "Failure to have valid travel documents, passports, visas, and driving licenses.",
+        "Failure to comply with the laws of the country being visited.",
+        "Failure to protect possessions or prevent accidents.",
+        "Traveling against travel warnings issued by Indonesia Government, WHO, or other bodies due to Strikes, Civil Disturbances, War, or Natural Disasters.",
+        "Epidemics, pandemics, or unsafe health conditions unless not directly linked to the triggering travel warning.",
+        "Unexplained loss or mysterious disappearance.",
+        "Financial or non-financial business losses.",
+        "Bankruptcy or liquidation of tour operators, travel agents, or Public Transport companies.",
+        "War, invasion, hostilities, civil war, rebellion, insurrection, military force, or coup.",
+        "Travel to or through Afghanistan, Iraq, Iran, Liberia, Libya, Mali, Syria, Somalia, or Sudan.",
+        "Ionizing radiations, nuclear contamination, radioactive toxic exposure, or nuclear explosions."
+    ],
+    "optional_benefit_cover": {
+        "winter_sports": {
+            "description": "Coverage for participating in winter sports abroad if an additional premium is paid and the benefit is included in the Insurance Policy.",
+            "winter_sports_pack": {
+                "coverage": "Reimbursement for unused portion of pre-booked and pre-paid winter sports pack if the insured is ill or injured.",
+                "requirements": [
+                    "Medical report confirming inability to undertake planned activity.",
+                    "Receipt for the winter sports pack."
+                ],
+                "includes": [
+                    "Ski-school fees",
+                    "Ski instructor fees",
+                    "Hired equipment",
+                    "Lift pass"
+                ]
+            },
+            "on_piste_closure": {
+                "coverage": "Compensation for additional transportation costs or daily allowance if on-piste skiing is unavailable due to weather conditions.",
+                "requirements": [
+                    "Written statement from resort managers confirming closure reason and duration."
+                ],
+                "conditions": [
+                    "Resort must be at least 1,000 meters above sea level."
+                ],
+                "covered_activities": [
+                    "Skiing",
+                    "Snowkiting",
+                    "Snowblading",
+                    "Snowboarding",
+                    "Sledding",
+                    "Snow rafting",
+                    "Tobogganing",
+                    "Snow biking",
+                    "Snowmobiling within resort",
+                    "Snow trekking"
+                ]
+            },
+            "exclusions": [
+                "Failure to follow recommended safety precautions, including wearing a safety helmet.",
+                "Participation in national or international competitions or training for them.",
+                "Activities outside resort operational hours or off-piste (backcountry) skiing.",
+                "Claims arising from freestyle skiing, ski jumping, ski-flying, ski acrobatics, ski stunting, parapenting, bobsleigh use, skeleton use, or repetitive ski run helicopter travel."
+            ]
+        },
+        "cruise_cover": {
+            "description": "Coverage for traveling on an overseas cruise ship if an additional premium is paid and the benefit is included in the Insurance Policy.",
+            "cabin_confinement": {
+                "coverage": "Compensation for each 24-hour period of confinement to the cabin for medical reasons.",
+                "requirements": [
+                    "Written statement from the ship's medical officer confirming reason and duration of confinement."
+                ]
+            },
+            "itinerary_change": {
+                "coverage": "Compensation for each missed port due to adverse weather conditions.",
+                "requirements": [
+                    "Written statement from the cruise operator confirming reason for missed port."
+                ]
+            },
+            "unused_excursion": {
+                "coverage": "Reimbursement for pre-booked excursions that were unused due to cabin confinement caused by an accident or illness covered under Medical Expenses.",
+                "requirements": [
+                    "Proof of pre-booked excursions and medical confirmation of confinement."
+                ]
+            },
+            "cruise_trip_interruption": {
+                "coverage": "Reimbursement for additional transportation expenses to reach the next port and compensation for unused pre-booked excursions due to cabin confinement.",
+                "requirements": [
+                    "Proof of additional transportation expenses.",
+                    "Medical confirmation of confinement."
+                ]
+            }
+        },
+        "adventure_activities": {
+            "description": "Coverage for recreational, non-professional adventure activities if an additional premium is paid and included in the Insurance Policy.",
+            "covered_activities": [
+                {
+                    "name": "Abseiling",
+                    "conditions": [
+                        "Not more than 100 meters"
+                    ]
+                },
+                {
+                    "name": "Hot air ballooning"
+                },
+                {
+                    "name": "Motorcycling",
+                    "conditions": [
+                        "Above 125 cc",
+                        "No touring"
+                    ]
+                },
+                {
+                    "name": "Kite surfing"
+                },
+                {
+                    "name": "Ice skating",
+                    "conditions": [
+                        "Outdoor",
+                        "Commercially managed rink"
+                    ]
+                },
+                {
+                    "name": "Mountain biking"
+                },
+                {
+                    "name": "Sandboarding"
+                },
+                {
+                    "name": "Caving or Canyoning",
+                    "conditions": [
+                        "Sightseeing/tourist attraction",
+                        "Recreational visit only"
+                    ]
+                },
+                {
+                    "name": "Shark cage diving"
+                },
+                {
+                    "name": "Zorbing"
+                },
+                {
+                    "name": "Rock climbing",
+                    "conditions": [
+                        "Outdoor/traditional/sport climbing/bolted/aid climbing",
+                        "No soloing"
+                    ]
+                },
+                {
+                    "name": "Parasailing/Paragliding"
+                },
+                {
+                    "name": "Canoeing",
+                    "conditions": [
+                        "Inland/coastal grade 1-3 only"
+                    ]
+                },
+                {
+                    "name": "Rafting",
+                    "conditions": [
+                        "Inland/coastal grade 1-3 only"
+                    ]
+                },
+                {
+                    "name": "Safari"
+                },
+                {
+                    "name": "Water skiing/wakeboarding/wake skating",
+                    "conditions": [
+                        "No jumping"
+                    ]
+                },
+                {
+                    "name": "Bungee jumping; rope jumping"
+                }
+            ]
+    },
+ 
+        "visa_protection": {
+            "description": "Compensation for non-recoverable visa fees if the visa application is rejected.",
+            "coverage": "Reimbursement of lost visa fee if the application is rejected by the embassy.",
+            "conditions": [
+                "Must fulfill all visa requirements to claim.",
+                "Only one claim per round-trip policy or two claims per annual policy.",
+                "Must provide a visa rejection letter and original visa fee receipt.",
+                "Coverage is only effective if purchased before awareness of rejection circumstances."
+            ],
+            "exclusions": [
+                "Damaged passport or less than 6 months validity.",
+                "Falsified visa documents.",
+                "Involvement in criminal cases.",
+                "Failure to provide return evidence to Indonesia.",
+                "Insufficient financial support.",
+                "Failure to present a detailed travel itinerary, booked accommodation, or valid reference letter.",
+                "Failure to meet age or health requirements.",
+                "Wrong country embassy application.",
+                "Previous illegal immigration or visa violations."
+            ]
+        },
+        "business_travel": {
+            "description": "Coverage for additional expenses related to business travel interruptions.",
+            "coverage": {
+                "staff_replacement": {
+                    "description": "Reimbursement of transport and accommodation costs for a business colleague to replace the insured at a pre-arranged event.",
+                    "requirements": [
+                        "Claim must be approved under Medical, Trip Curtailment, or Personal Accident sections."
+                    ]
+                },
+                "business_equipment": {
+                    "description": "Reimbursement for repair or replacement of business equipment lost, stolen, or damaged during the trip.",
+                    "includes": [
+                        "Company laptop",
+                        "Business samples",
+                        "Portable equipment for business use"
+                    ],
+                    "conditions": "Conditions and exclusions under Baggage section apply."
+                },
+                "missed_event_fees": {
+                    "description": "Reimbursement of pre-booked, non-refundable business event fees due to trip cancellation.",
+                    "conditions": "Trip Cancellation and Alteration conditions apply."
+                }
+            },
+            "conditions": [
+                "Must provide a business trip confirmation letter from the employer."
+            ],
+            "exclusions": [
+                "Loss covered under another insurance, scheme, or government act.",
+                "Amounts recoverable from hotels, transport, travel agents, or other sources.",
+                "Only the difference between recoverable amounts and the insured loss will be paid."
+            ]
+        }
+    }
+}
